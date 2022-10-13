@@ -1,22 +1,13 @@
 package com.jad;
 
-import com.jad.nfslist.Cell;
-import com.jad.nfslist.Data;
+import com.jad.nfstree.Node;
+
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
-        Cell c1 = new Cell(new Data('A'));
-        Cell c2 = new Cell(new Data('B'));
-        Cell c3 = new Cell(new Data('C'));
-        Cell c4 = new Cell(new Data('I'));
-        c1.setNext(c2);
-        c2.setNext(c3);
-        c1.insertNext(c4);
-        System.out.println(c1.toString());
-        // A, I, B, C
-        c1.deleteByRank(2);
-        System.out.println(c1.toString());
-        // A, I, C
+        Node<String> n1 = new Node("A", new Node("B", new Node("D"), new Node("E")), new Node("C", new Node("F"), new Node("G")));
+        System.out.println(n1);
     }
 }
