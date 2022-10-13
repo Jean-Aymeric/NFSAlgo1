@@ -14,6 +14,9 @@ public class Main {
         c2.setNext(c3);
         c1.insertNext(c4);
         System.out.println(c1.toString());
-        System.out.println(c2.toString());
+        // A, I, B, C
+        c1.deleteByRank(2);
+        System.out.println(c1.toString());
+        // A, I, C
     }
 }

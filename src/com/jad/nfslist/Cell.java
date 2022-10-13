@@ -29,4 +29,8 @@ public class Cell {
     public void insertNext(final Cell next) {
         // To do
     }
+
+    public void deleteByRank(int rank) {
+        // To do
+    }
 }
