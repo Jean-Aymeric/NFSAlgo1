@@ -1,13 +1,23 @@
 package com.jad;
 
 import com.jad.nfstree.Node;
+import com.jad.parking.Parking;
+import com.jad.vehicle.Bike;
+import com.jad.vehicle.Car;
+import com.jad.vehicle.Tank;
 
 import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
-        Node<String> n1 = new Node("A", new Node("B", new Node("D"), new Node("E")), new Node("C", new Node("F"), new Node("G")));
-        System.out.println(n1);
+        Parking myParking = new Parking();
+        Car twingo = new Car();
+        Bike titine = new Bike();
+        Tank leclerc = new Tank();
+
+        myParking.add(twingo);
+        myParking.add(titine);
+        //myParking.add(leclerc);
     }
 }
