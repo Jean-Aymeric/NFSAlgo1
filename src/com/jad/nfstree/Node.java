@@ -57,7 +57,7 @@ class Node<E extends Comparable> {
     }
 
     public void add(E value) {
-        int compareResult = this.getData().compareTo(value);
+        int compareResult = value.compareTo(this.getData());
         if (compareResult != 0) {
             if (this.getChild(compareResult) == null) {
                 this.setChild(compareResult, new Node<>(value));
@@ -68,10 +68,14 @@ class Node<E extends Comparable> {
     }
 
     public int getHeight() {
-        return 0;
+        int heightLeft = (this.getLeft() == null) ? 0 : this.getLeft().getHeight();
+        int heightRight = (this.getRight() == null) ? 0 : this.getRight().getHeight();
+        return 1 + Math.max(heightLeft, heightRight);
     }
 
     public int count() {
-        return 0;
+        int countLeft = (this.getLeft() == null) ? 0 : this.getLeft().count();
+        int countRight = (this.getRight() == null) ? 0 : this.getRight().count();
+        return 1 + countLeft + countRight;
     }
 }

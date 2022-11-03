@@ -25,10 +25,18 @@ public class BinaryTree<E extends Comparable> {
     }
 
     public int getHeight() {
-        return 0;
+        if (this.root == null) {
+            return 0;
+        } else {
+            return this.root.getHeight();
+        }
     }
 
     public int count() {
-        return 0;
+        if (this.root == null) {
+            return 0;
+        } else {
+            return this.root.count();
+        }
     }
 }

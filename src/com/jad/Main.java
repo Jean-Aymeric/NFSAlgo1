@@ -30,12 +30,13 @@ public class Main {
         myTree.add(27);
         myTree.add(26);
         myTree.add(51);
-        System.out.println(myTree);
+        System.out.println(myTree + " hauteur : " + myTree.getHeight() + " nb : " + myTree.count());
 
         BinaryTree<String> t2 = new BinaryTree<>();
-        t2.add("BEBE");
+        t2.add("AB");
         t2.add("A");
+        t2.add("AA");
         t2.add("C");
-        System.out.println(t2);
+        System.out.println(t2 + " hauteur : " + t2.getHeight() + " nb : " + t2.count());
     }
 }
