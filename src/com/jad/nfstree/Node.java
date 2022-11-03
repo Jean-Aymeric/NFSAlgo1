@@ -71,7 +71,7 @@ class Node<E extends Comparable> {
         return 0;
     }
 
-    public int countNodes() {
+    public int count() {
         return 0;
     }
 }

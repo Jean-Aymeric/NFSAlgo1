@@ -23,4 +23,12 @@ public class BinaryTree<E extends Comparable> {
             return this.root.toString();
         }
     }
+
+    public int getHeight() {
+        return 0;
+    }
+
+    public int count() {
+        return 0;
+    }
 }
