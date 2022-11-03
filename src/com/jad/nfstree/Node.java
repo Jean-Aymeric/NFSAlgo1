@@ -1,6 +1,6 @@
 package com.jad.nfstree;
 
-class Node<E extends Comparable> {
+public class Node<E extends Comparable> {
     private final E data;
     private Node<E> left;
     private Node<E> right;
@@ -77,5 +77,34 @@ class Node<E extends Comparable> {
         int countLeft = (this.getLeft() == null) ? 0 : this.getLeft().count();
         int countRight = (this.getRight() == null) ? 0 : this.getRight().count();
         return 1 + countLeft + countRight;
+    }
+
+    public int getBalanceFactor() {
+        return ((this.right != null) ? this.right.getHeight() : 0) - ((this.left != null) ? this.left.getHeight() : 0);
+    }
+
+    public boolean isEquilibrate() {
+        boolean leftNodeEquilibrate = this.getLeft() == null || this.getLeft().isEquilibrate();
+        boolean rightNodeEquilibrate = this.getRight() == null || this.getRight().isEquilibrate();
+        return (Math.abs(this.getBalanceFactor()) <= 1) && leftNodeEquilibrate && rightNodeEquilibrate;
+    }
+
+    public String toStringWithBalanceFactor() {
+        return this.data.toString() + "[" + this.getBalanceFactor() + "] (" +
+                ((this.getLeft() != null)?this.getLeft().toStringWithBalanceFactor():"-") + ", " +
+                ((this.getRight() != null)?this.getRight().toStringWithBalanceFactor():"-") + ")";
+    }
+
+    public String toJson() {
+        String result;
+        result = "{\"\"data\": " + this.data + ",";
+        if (this.getLeft() != null) {
+            result += " \"left\": " + this.getLeft().toJson();
+        }
+        if (this.getRight() != null) {
+            result += " \"right\": " + this.getRight().toJson();
+        }
+        result += "},";
+        return result;
     }
 }

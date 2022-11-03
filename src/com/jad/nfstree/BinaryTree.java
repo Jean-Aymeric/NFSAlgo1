@@ -7,6 +7,10 @@ public class BinaryTree<E extends Comparable> {
         this.root = null;
     }
 
+    public Node<E> getRoot() {
+        return root;
+    }
+
     public void add(E value) {
         if (this.root == null) {
             this.root = new Node<>(value);
@@ -39,4 +43,5 @@ public class BinaryTree<E extends Comparable> {
             return this.root.count();
         }
     }
+
 }
