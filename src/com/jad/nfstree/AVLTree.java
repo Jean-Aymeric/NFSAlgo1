@@ -29,9 +29,25 @@ public class AVLTree<E extends Comparable> extends BinaryTree<E> {
     }
 
     public void rotate(Node nodeToRotate, SenseOfRotation senseOfRotation) {
-
+        switch (senseOfRotation) {
+            case Left:
+                this.rotateLeft(nodeToRotate);
+                break;
+            case Right:
+                this.rotateRight(nodeToRotate);
+                break;
+        }
     }
+
     public void rotate(E value, SenseOfRotation senseOfRotation) {
         this.rotate(findNodeByValue(value), senseOfRotation);
+    }
+
+    private void rotateLeft(Node nodeToRotate) {
+
+    }
+
+    private void rotateRight(Node nodeToRotate) {
+
     }
 }
