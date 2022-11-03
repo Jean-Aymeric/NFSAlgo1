@@ -1,6 +1,6 @@
 package com.jad.nfslist;
 
-public class Cell<E> {
+class Cell<E> {
     private final E data;
     private Cell next;
 
@@ -25,11 +25,6 @@ public class Cell<E> {
         return this.data.toString() + ((this.getNext() == null) ? "" : "->" + this.getNext().toString());
     }
 
-    public void insertNext(final Cell next) {
-        next.setNext(this.getNext());
-        this.setNext(next);
-    }
-
     public void deleteByRank(int rank) {
         Cell temporaryCell = this;
         int i;
@@ -41,13 +36,5 @@ public class Cell<E> {
             temporaryCell.setNext(temporaryCell.getNext().getNext());
             cellToDelete.setNext(null);
         }
-    }
-
-    public void push(final Cell cellToPush) {
-        // To do
-    }
-
-    public void pop(final Cell cellToPush) {
-        // To do
     }
 }
