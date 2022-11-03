@@ -9,7 +9,7 @@ public class BinaryTree<E extends Comparable> {
 
     public void add(E value) {
         if (this.root == null) {
-            this.root = new Node<E>(value);
+            this.root = new Node<>(value);
         } else {
             this.root.add(value);
         }
