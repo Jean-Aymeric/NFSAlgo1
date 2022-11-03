@@ -1,21 +1,15 @@
 package com.jad.nfslist;
 
-public class Cell {
-    private final Data data;
+public class Cell<E> {
+    private final E data;
     private Cell next;
-    private static final String bidule = "Un Truc En dur Dans la classe";
 
-    public Cell(final Data data) {
+    public Cell(final E data) {
         this.data = data;
         this.next = null;
     }
-
-    public Cell(final char value) {
-        this.data = new Data(value);
-        this.next = null;
-    }
-    public Data getData() {
-        return data;
+    public E getData() {
+        return this.data;
     }
 
     public Cell getNext() {
@@ -56,5 +50,4 @@ public class Cell {
     public void pop(final Cell cellToPush) {
         // To do
     }
-
 }

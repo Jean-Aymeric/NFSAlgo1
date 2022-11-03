@@ -1,23 +1,22 @@
 package com.jad;
 
-import com.jad.nfstree.Node;
-import com.jad.parking.Parking;
-import com.jad.vehicle.Bike;
-import com.jad.vehicle.Car;
-import com.jad.vehicle.Tank;
-
-import java.util.ArrayList;
+import com.jad.nfslist.Cell;
 
 public class Main {
 
     public static void main(String[] args) {
-        Parking myParking = new Parking();
-        Car twingo = new Car();
-        Bike titine = new Bike();
-        Tank leclerc = new Tank();
+        Cell c1 = new Cell<Character>('A');
+        Cell c2 = new Cell<Character>('B');
+        Cell c3 = new Cell<Character>('C');
 
-        myParking.add(twingo);
-        myParking.add(titine);
-        //myParking.add(leclerc);
+        Cell c4 = new Cell<Character>('I');
+        c1.setNext(c2);
+        c2.setNext(c3);
+        c1.push(c4);
+
+        System.out.println(c1.toString());
+        // A, I, B, C
+
+        // A, I, C
     }
 }
