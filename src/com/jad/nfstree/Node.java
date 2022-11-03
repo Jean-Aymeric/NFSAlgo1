@@ -1,6 +1,6 @@
 package com.jad.nfstree;
 
-public class Node<E> {
+class Node<E> {
     private final E data;
     private Node left;
     private Node right;

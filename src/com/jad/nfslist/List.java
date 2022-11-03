@@ -39,6 +39,20 @@ public class List<E> {
     }
 
     public E pop() {
-        return null;
+        if (this.head == null) {
+            return null;
+        } else {
+            Cell<E> temporaryCell = this.head;
+            this.head = this.head.getNext();
+            return temporaryCell.getData();
+        }
+    }
+
+    public int count() {
+        if (this.head == null) {
+            return 0;
+        } else {
+            return this.head.count();
+        }
     }
 }

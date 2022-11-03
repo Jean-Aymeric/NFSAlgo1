@@ -13,5 +13,7 @@ public class Main {
         myList.push('I');
         System.out.println(myList);
         System.out.println(myList.pop()); // -> I
+        System.out.println(myList);
+        System.out.println(myList.count());
     }
 }

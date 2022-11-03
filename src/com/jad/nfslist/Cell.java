@@ -37,4 +37,8 @@ class Cell<E> {
             cellToDelete.setNext(null);
         }
     }
+
+    public int count() {
+        return (this.getNext() == null) ? 1 : (1 + this.getNext().count());
+    }
 }
