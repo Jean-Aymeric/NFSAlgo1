@@ -2,7 +2,7 @@ package com.jad.nfslist;
 
 class Cell<E> {
     private final E data;
-    private Cell next;
+    private Cell<E> next;
 
     public Cell(final E data) {
         this.data = data;
@@ -12,11 +12,11 @@ class Cell<E> {
         return this.data;
     }
 
-    public Cell getNext() {
+    public Cell<E> getNext() {
         return next;
     }
 
-    public void setNext(final Cell next) {
+    public void setNext(final Cell<E> next) {
         this.next = next;
     }
 
@@ -26,13 +26,13 @@ class Cell<E> {
     }
 
     public void deleteByRank(int rank) {
-        Cell temporaryCell = this;
+        Cell<E> temporaryCell = this;
         int i;
         for (i = 0; i < (rank-1) && temporaryCell.getNext() != null; i++) {
             temporaryCell = temporaryCell.getNext();
         }
         if ((i == rank-1) && (temporaryCell.getNext() != null)) {
-            Cell cellToDelete = temporaryCell.getNext();
+            Cell<E> cellToDelete = temporaryCell.getNext();
             temporaryCell.setNext(temporaryCell.getNext().getNext());
             cellToDelete.setNext(null);
         }

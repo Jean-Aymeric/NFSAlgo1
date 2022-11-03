@@ -2,8 +2,8 @@ package com.jad.nfstree;
 
 class Node<E> {
     private final E data;
-    private Node left;
-    private Node right;
+    private Node<E> left;
+    private Node<E> right;
 
     public Node(final E data) {
         this.data = data;
@@ -11,25 +11,25 @@ class Node<E> {
         this.right = null;
     }
 
-    public Node(final E data, final Node left, final Node right) {
+    public Node(final E data, final Node<E> left, final Node<E> right) {
         this.data = data;
         this.left = left;
         this.right = right;
     }
 
-    public Node getLeft() {
+    public Node<E> getLeft() {
         return left;
     }
 
-    public void setLeft(final Node left) {
+    public void setLeft(final Node<E> left) {
         this.left = left;
     }
 
-    public Node getRight() {
+    public Node<E> getRight() {
         return right;
     }
 
-    public void setRight(final Node right) {
+    public void setRight(final Node<E> right) {
         this.right = right;
     }
 

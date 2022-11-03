@@ -9,13 +9,13 @@ public class List<E> {
 
     public void add(final E value) {
         if (this.head == null) {
-            this.head = new Cell<E>(value);
+            this.head = new Cell<>(value);
         } else {
-            Cell temporaryCell = this.head;
+            Cell<E> temporaryCell = this.head;
             while (temporaryCell.getNext() != null) {
                 temporaryCell = temporaryCell.getNext();
             }
-            temporaryCell.setNext(new Cell<E>(value));
+            temporaryCell.setNext(new Cell<>(value));
         }
     }
 
@@ -30,9 +30,9 @@ public class List<E> {
 
     public void push(final E value) {
         if (this.head == null) {
-            this.head = new Cell<E>(value);
+            this.head = new Cell<>(value);
         } else {
-            Cell temporaryCell = new Cell<E>(value);
+            Cell<E> temporaryCell = new Cell<>(value);
             temporaryCell.setNext(this.head);
             this.head = temporaryCell;
         }
